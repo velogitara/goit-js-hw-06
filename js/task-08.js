@@ -5,7 +5,7 @@ formEl.addEventListener('submit', onFormSubmit);
 function onFormSubmit(event) {
   event.preventDefault();
 
-  const formData = new FormData(event.currentTarget);
+  //   const formData = new FormData(event.currentTarget);
 
   const {
     elements: { email, password },
@@ -15,10 +15,12 @@ function onFormSubmit(event) {
 
   if (email.value === '' || password.value === '') {
     window.alert('please, fill all form fields');
-  } else (dataBase.email = email.value), (dataBase.password = password.value);
-  console.log(dataBase);
+  } else {
+    (dataBase.email = email.value), (dataBase.password = password.value);
 
-  event.currentTarget.reset();
+    console.log(dataBase);
+    event.currentTarget.reset();
+  }
 }
 
 //  formData.forEach((value, name) => {
