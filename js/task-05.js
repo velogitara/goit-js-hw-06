@@ -7,12 +7,10 @@
 const inputRef = document.querySelector('#name-input');
 const spanRef = document.querySelector('#name-output');
 // console.dir(inputRef);
-console.log(spanRef.textContent);
+// console.log(spanRef.textContent);
 
-spanRef.textContent = 'Anonymous';
+// spanRef.textContent = 'Anonymous';
 
 inputRef.addEventListener('input', event => {
-  //   console.dir(event.currentTarget);
-  //   console.log(event.currentTarget.value);
   spanRef.textContent = event.currentTarget.value || 'Anonymous';
 });
