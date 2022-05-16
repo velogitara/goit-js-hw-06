@@ -48,3 +48,25 @@
 // const counter = new CounterPlugin({ rootSelector: '#counter', step: 1 });
 
 // console.log(counter);
+
+let counterValue = 0;
+
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+console.log(decrementBtn);
+const incrementBtn = document.querySelector('[data-action="increment"]');
+console.log(incrementBtn);
+const value = document.querySelector('#value');
+console.log(value);
+
+const decrementValue = () => {
+  counterValue -= 1;
+  value.textContent = counterValue;
+};
+
+const incrementValue = () => {
+  counterValue += 1;
+  value.textContent = counterValue;
+};
+
+decrementBtn.addEventListener('click', decrementValue);
+incrementBtn.addEventListener('click', incrementValue);
