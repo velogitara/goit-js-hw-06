@@ -7,9 +7,34 @@
     <title>Task 3</title>
     <link rel="stylesheet" href="css/common.css" />
     <style>
+      h1,
+      h2,
+      h3,
+      p,
+      ul,
+      li {
+        margin-top: 0;
+        margin-bottom: 0;
+        list-style: none;
+        padding: 0;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: 5%;
+        box-shadow: 2px 5px rgba(0, 0, 0, 0.091), -0.5em 0 0.5em rgba(0, 0, 0, 0.342);
+      }
       .gallery {
+        padding: 10%;
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
+        margin: -15px;
+      }
+      li {
+        display: flex;
+        flex-basis: calc((100% - 3 * 30px) / 3);
+        margin: 15px;
       }
     </style>
   </head>

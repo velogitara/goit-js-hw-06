@@ -13,19 +13,41 @@ const images = [
   },
 ];
 
+// ================================================
+
+//  <li><img src="" alt=""></li>
+
+// <li><img src="" alt=""></li>
+
+// <li><img src="" alt=""></li>
+
+const makeImagesMarkUp = element => {
+  console.log(element);
+  const { url, alt } = element;
+  return ` 
+    <li>
+      <img src="${url}" alt="${alt}">
+    </li>
+    `;
+};
+// console.log(makeImagesMarkUp(images[0]));
+const makeImagesGallery = images.map(makeImagesMarkUp).join('');
+console.log(makeImagesGallery);
+
 const galleryRef = document.querySelector('.gallery');
+galleryRef.insertAdjacentHTML('afterbegin', makeImagesGallery);
 
-const imagesEl = images.map(el => {
-  const listsEl = document.createElement('li');
-  const imgEl = document.createElement('img');
-  listsEl.append(imgEl);
-  imgEl.src = el.url;
-  imgEl.alt = el.alt;
-  imgEl.width = 400;
-  // console.log(el);
-  // console.log(listsEl);
-  return listsEl;
-});
+// const imagesEl = images.map(el => {
+//   const listsEl = document.createElement('li');
+//   const imgEl = document.createElement('img');
+//   listsEl.append(imgEl);
+//   imgEl.src = el.url;
+//   imgEl.alt = el.alt;
 
-console.log(imagesEl);
-galleryRef.append(...imagesEl);
+//   // console.log(el);
+//   // console.log(listsEl);
+//   return listsEl;
+// });
+
+// console.log(imagesEl);
+// galleryRef.append(...imagesEl);
