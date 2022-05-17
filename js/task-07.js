@@ -5,4 +5,4 @@ const onClick = element => {
   console.log(element.currentTarget.value + 'px');
   spanRef.style.fontSize = element.currentTarget.value + 'px';
 };
-inputRef.addEventListener('click', onClick);
+inputRef.addEventListener('input', onClick);

@@ -15,6 +15,7 @@ function onFormSubmit(event) {
 
   if (email.value === '' || password.value === '') {
     window.alert('please, fill all form fields');
+    //   return
   } else {
     (dataBase.email = email.value), (dataBase.password = password.value);
 
