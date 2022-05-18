@@ -1,13 +1,14 @@
 const controlsRef = document.querySelector('#controls');
-const inputValue = controlsRef.firstElementChild.value;
-
+const inputValue = document.querySelector('input[type="number"]');
+console.log(inputValue);
 const createBtn = document.querySelector('[data-create]');
 
 const destroyBtn = document.querySelector('[data-destroy]');
 
 const divBoxesRef = document.querySelector('#boxes');
 
-const size = '10px';
+let basicWidth = 30;
+
 // const newElement = document.createElement('div');
 
 // console.dir(controlsRef.firstElementChild);
@@ -21,36 +22,35 @@ const size = '10px';
 //   SummSumm.appendChild(SummText);
 // }
 
-const createBoxes = event => {
-  const createFewBoxes = amount => {
-    let newElement = [];
-    for (let i = 0; i < amount; i += 1) {
-      // console.log(newElement[0]);
-
-      newElement.push(document.createElement('div'));
-    }
-    return newElement;
-  };
-
-  const result = createFewBoxes(controlsRef.firstElementChild.value);
-  result.map(el => {
-    const basicWidth = '30px';
-
+const createBoxes = () => {
+  const inpValue = inputValue.value;
+  // console.log(typeof inpValue);
+  let newElement = [];
+  let size = 0;
+  for (let i = 0; i < inpValue; i += 1) {
+    const el = document.createElement('div');
     el.classList.add('newDiv');
-    el.style.width = getBoxSize();
+    el.style.width = `${30 + size}px`;
     el.style.height = '30px';
     el.style.backgroundColor = getRandomHexColor();
 
-    console.log(el);
-  });
+    size += 10;
 
-  // console.log(result);
-  divBoxesRef.append(...result);
+    console.log(el);
+    newElement.push(el);
+  }
+  // console.log(newElement);
+
+  divBoxesRef.append(...newElement);
 };
 
 createBtn.addEventListener('click', createBoxes);
 
-function getBoxSize() {}
+// function getBoxSize() {
+//   // const newWidth = `${basicWidth}px`;
+//   // return newWidth;
+//   console.log(newObj);
+// }
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
