@@ -3,11 +3,25 @@ const listRef = document.querySelector('#ingredients');
 
 // const listsEl = document.createElement('li');
 // console.log(listsEl);
-ingredients.forEach(el => {
+
+// console.log(allIngredients);
+
+// ingredients.forEach(el => {
+// const listsEl = document.createElement('li');
+// listsEl.classList.add('item');
+// listsEl.textContent = el;
+//   // console.log(listsEl);
+//   listRef.append(listsEl);
+// });
+
+const allElements = ingredients.map(el => {
+  console.log(el);
   const listsEl = document.createElement('li');
   listsEl.classList.add('item');
   listsEl.textContent = el;
-  // console.log(listsEl);
-  listRef.append(listsEl);
+  return listsEl;
 });
-// console.log(allIngredients);
+
+listRef.append(...allElements);
+
+console.log(allElements);
